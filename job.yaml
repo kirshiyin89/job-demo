@@ -3,6 +3,9 @@ kind: Job
 metadata:
   name: ttl-test-job
   namespace: default
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   ttlSecondsAfterFinished: 60
   template:
